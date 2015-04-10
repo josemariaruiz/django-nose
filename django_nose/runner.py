@@ -382,7 +382,7 @@ def _foreign_key_ignoring_handle(self, *fixture_labels, **options):
             connection.close()
 
 
-def _skip_create_test_db(self, verbosity=1, autoclobber=False, serialize=True):
+def _skip_create_test_db(self, verbosity=1, autoclobber=False, keepdb=False, serialize=True):
     """``create_test_db`` implementation that skips both creation and flushing
 
     The idea is to re-use the perfectly good test DB already created by an
