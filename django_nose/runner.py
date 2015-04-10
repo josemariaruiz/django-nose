@@ -516,11 +516,6 @@ class NoseTestSuiteRunner(BasicNoseRunner):
                 for reset_statement in reset_statements:
                     cursor.execute(reset_statement)
 
-                # Django v1.3 (https://code.djangoproject.com/ticket/9964)
-                # starts using commit_unless_managed() for individual
-                # connections. Backwards compatibility for Django 1.2 is to use
-                # the generic transaction function.
-                transaction.commit_unless_managed(using=connection.alias)
 
                 # Each connection has its own creation object, so this affects
                 # only a single connection:
