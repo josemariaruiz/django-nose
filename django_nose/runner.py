@@ -25,7 +25,7 @@ try:
     from django.db.backends.base.creation import BaseDatabaseCreation
 except ImportError:
     # Django < 1.7
-    from django.db.backends.creation import BaseDatabaseCreation    
+    from django.db.backends.creation import BaseDatabaseCreation
 
 try:
     from importlib import import_module
@@ -169,6 +169,7 @@ if hasattr(BaseCommand, 'use_argparse'):
             'float': float,
             'complex': complex,
             'string': str,
+            'choice': str,
         }
         # If optparse has a None argument, omit from call to add_argument
         _argparse_omit_if_none = (
